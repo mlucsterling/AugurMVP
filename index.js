@@ -42,9 +42,10 @@
 
 /*handle click submit button*/
 function clickSubmit() {
-    $('form').submit(function() {
-        
-    })
+    $('form').submit(event => {
+        event.preventDefault();
+        console.log('clickSubmit Activated');        
+    });
 }
 
 /*handle app*/
