@@ -1,14 +1,16 @@
-/*take info from date*/
-
-
-/*take info from venue name*/
-
-
-/*take info from venue address*/
-
+/*global variables*/
+    let dateValue = document.getElementById('formDate').value;
+    let venueValue = document.getElementById('formName').value;
+    let addressValue = document.getElementById('formAddress').value;
+    let dateEncoded = encodeURI(dateEncoded);
+    let venueEncoded = encodeURI(venueValue);
+    let addressEncoded = encodeRI(addressValue);
 
 /*fetch from SunriseSunset API*/
-
+function fetchSunriseSunset() {
+    let requestSunriseSunset = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAgxqv-S0ZW8i0nQCAPsQ-eMnC6T4ZDCmU&address=' + addressEncoded;
+    fetch(requestSunriseSunset)
+};
 
 /*fetch from Openweather API*/
 
@@ -46,6 +48,6 @@ function clickSubmit() {
         event.preventDefault();
         console.log('clickSubmit Activated');        
     });
-}
+};
 
 /*handle app*/
