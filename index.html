@@ -6,70 +6,94 @@
     <title>Augur: Simple Photoshoot Prep</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
+
     <main>
+
         <div class="form-container">
+
             <section>
+
                 <h1>Augur</h1>
                 <br>
                 <br>
+
                 <article>
+
                     <h2>How To Use This App</h2>
+
                     <p>
-                        Augur helps photographers prep for a shoot by providing important information about the venue and weather. Enter the date, name of the venue, and venue address. Augur works best within 30 days of your scheduled photoshoot.
+                        Augur helps photographers prep for a shoot by providing important information about the venue and weather. Enter the date, name of the venue, and venue address (just the city is fine). Augur works best within 14 days of your scheduled photoshoot.
                         <br>
                         <br>
                         Augur then returns the time of sunrise & sunset, general weather information for the day, and images of the venue from the web. Augur also gives you the option to redirect to a Google Streetview of the provided address.
                     </p>
+
                 </article>
+
             </section>
+
             <form>
+
                 <div>
                     <label class="block" for="formDate">Date</label>
-                        <input type="date" id="formDate">
+                        <input type="date" id="formDate" value="2020-07-22">
                 </div>
-                <div>
+
+                <!--<div>
                     <label class="block" for="formName">Venue Name</label>
                         <input type="text" value="Venue Name" id="formName">
-                </div>
+                </div>-->
+
                 <div>
                     <label class="block" for="formAddress">Venue Address</label>
                         <input type="text" value="Venue Address, City, State, Zip" id="formAddress">
                 </div>
+
                 <div>
                     <input class="block" type="submit" value="Submit">
                 </div>
+
             </form> 
+
         </div>
 
         <div class="results-container hidden">
 
             <section class="sun-results">
+
                 <div class="sunFlex">
+
                     <h3>Sunrise</h3>
-                        <div class="sunriseTime"></div>
+                        <div class="display-sunriseTime"></div>
 
                     <h3>Sunset</h3>
-                        <div class="sunsetTime"></div>
+                        <div class="display-sunsetTime"></div>
                 </div>
+
             </section>
 
-            <section>
+            <!--<section>
+
                 <h3>Weather</h3>
                     <div class="weather-results"></div>
 
             </section>
 
             <section>
+
                 <h3>Images</h3>
                     <div class="image-results"></div>
 
-            </section>
+            </section>-->
 
-            <button class="streetview">See Streetview</button>
-            <br>
+            <!--<button class="streetview">See Streetview</button>
+            <br>-->
             <button class="redo">New Search</button>
+
         </div>
+
     </main>
 
     <script src="AugurImages/"></script>
