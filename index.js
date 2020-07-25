@@ -2,17 +2,23 @@
     /*let venueValue = document.getElementById('formName').value;*/
     /*let venueEncoded = encodeURI(venueValue);*/
 
+const APIKey = `&key=AIzaSyCc_CaGw29Hr8YeCBjcBo1kfJo7HHfujPs`
+const GeocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?`
+let addressValue = document.getElementById('formAddress').value;
+
 /*fetch from SunriseSunset API*/
 function fetchLongiLati() {
     console.log('fetchLongiLati activated');
-    let addressValue = document.getElementById('formAddress').value;
-    /*let addressEncoded = encodeURI(addressValue);*/
-    let requestLongiLati = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCc_CaGw29Hr8YeCBjcBo1kfJo7HHfujPs&address=' + addressValue;
+    let addressEncoded = encodeURI(addressValue);
+    let requestLongiLati = GeocodeURL+`address=`+addressEncoded+APIKey;
     fetch(requestLongiLati)
         .then(response => response.json())
-            .then(responseJson => fetchSun(responseJson))
-                /*.then (responseJson => fetchWeather)*/
-                    .catch(error => console.log(error));
+        .then(responseJson => fetchSun(responseJson))
+        /*.then (responseJson => fetchWeather)*/
+        .catch(error => {
+            console.log(error)
+            alert('error at fetchLongiLati')
+        });
 };
 
 /*extract longitude/latitude data, then fetch sunrise/sunset times*/
@@ -25,7 +31,10 @@ function fetchSun() {
     fetch('https://api.sunrise-sunset.org/json?lat='+lati+'&lng='+longi+'&date='+dateEncoded)
         .then(response => response.json())
             .then(responseJson => displaySun(responseJson))
-                .catch(error => console.log(error));
+                .catch(error => {
+                    console.log(error)
+                    alert('error at fetchSun')
+                });
 };
 
 /*fetch from Openweather API*/
